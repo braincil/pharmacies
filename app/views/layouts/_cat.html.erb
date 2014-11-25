@@ -1,0 +1,5 @@
+<div class="container">
+	<% City.all.each do |city| %>
+		<%=link_to city.name, pharmacies_path(city: city.name)%>
+	<%end%>
+</div>
