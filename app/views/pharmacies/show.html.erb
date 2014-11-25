@@ -1,0 +1,18 @@
+<h1>Show PAge</h1>
+
+	<tr>
+		<td><%=@pharmacies.name%></td>
+		<td><%=@pharmacies.surname%></td>
+		<td><%=@pharmacies.am%></td>
+		<td><%=@pharmacies.date.strftime('%v')%></td>
+		<td><%=@pharmacies.description%></td>
+		<td><%=@pharmacies.location%></td>
+		<td><%=@pharmacies.city_id%></td>
+		<td><%=@pharmacies.latitude%></td>
+		<td><%=@pharmacies.longitude%></td>
+	</tr>
+
+
+	<iframe	width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/static/v1/place?key=AIzaSyDXg_2U7Lnl8kBBaxUxyOTTpM5Ww3ZkQsk&q=
+	#{@pharmacies.latitude},#{@pharmacies.longitude}">
+</iframe>

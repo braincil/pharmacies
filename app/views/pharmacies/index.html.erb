@@ -15,18 +15,25 @@
 		<th>Description</th>
 		<th>Location</th>
 		<th>City ID</th>
+		<th>Latitude</th>
+		<th>Longitude</th>
 	</tr>
 
 	<% @pharmacies.each do |pharm| %>
+		<%if Date.today == pharm.date%>
 	<tr>
-		<td><%=pharm.name%></td>
+		<td><%=link_to pharm.name, pharmacy_path(pharm) %></td>
 		<td><%=pharm.surname%></td>
 		<td><%=pharm.am%></td>
-		<td><%=pharm.date%></td>
+		<td><%=pharm.date.strftime('%v')%></td>
+		<td><%= pharm.address%></td>
 		<td><%=pharm.description%></td>
 		<td><%=pharm.location%></td>
 		<td><%=pharm.city_id%></td>
+		<td><%=pharm.latitude%></td>
+		<td><%=pharm.longitude%></td>
 	</tr>
+		<%end%>
 	<%end%>
 
 

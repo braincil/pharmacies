@@ -12,6 +12,11 @@ class PharmaciesController < ApplicationController
 	end
 
 
+	def show
+		@pharmacies = Pharmacy.find(params[:id])
+	end
+
+
 
 	def import
 		Pharmacy.import(params[:file])
