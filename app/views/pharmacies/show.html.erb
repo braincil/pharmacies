@@ -13,6 +13,5 @@
 	</tr>
 
 
-	<iframe	width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/static/v1/place?key=AIzaSyDXg_2U7Lnl8kBBaxUxyOTTpM5Ww3ZkQsk&q=
-	#{@pharmacies.latitude},#{@pharmacies.longitude}">
-</iframe>
+	<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=800x400&maptype=roadmap&zoom=15
+&markers=color:red%7Clabel:C%7C#{@pharmacies.latitude},#{@pharmacies.longitude}" %>
