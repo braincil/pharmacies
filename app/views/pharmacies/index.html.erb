@@ -1,0 +1,38 @@
+<h1>index</h1>
+
+
+<table id="pharmacies">
+	<tr>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>AM</th>
+		<th>Date</th>
+		<th>Description</th>
+		<th>Location</th>
+		<th>City ID</th>
+	</tr>
+
+	<% @pharmacies.each do |pharm| %>
+	<tr>
+		<td><%=pharm.name%></td>
+		<td><%=pharm.surname%></td>
+		<td><%=pharm.am%></td>
+		<td><%=pharm.date%></td>
+		<td><%=pharm.description%></td>
+		<td><%=pharm.location%></td>
+		<td><%=pharm.city_id%></td>
+	</tr>
+	<%end%>
+
+
+</table>
+
+<h1>import csv</h1>
+
+	<%= form_tag import_pharmacies_path, multipart: true do %>
+		<%=file_field_tag :file %>
+		<%=submit_tag "Import"%>
+
+	<%end%>
+
+</table>
