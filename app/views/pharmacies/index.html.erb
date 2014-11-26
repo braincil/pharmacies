@@ -1,45 +1,49 @@
-<h1>index</h1>
-
-
-
-
 <%=render 'layouts/cat'%>
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Pharmacies</h3>
+				</div>
 
-<table id="pharmacies">
-	<tr>
-		<th>Name</th>
-		<th>Surname</th>
-		<th>AM</th>
-		<th>Date</th>
-		<th>Description</th>
-		<th>Location</th>
-		<th>City ID</th>
-		<th>Latitude</th>
-		<th>Longitude</th>
-	</tr>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>AM</th>
+						<th>First name</th>
+						<th>Last Name</th>
+						<th>Date</th>
+						<th>Location</th>
+						<th>Address</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+				  <% @pharmacies.each do |pharm| %>
+		        	  <%if Date.today == pharm.date%>
+		    		 	<tr>
+		    		 		<td><%=pharm.am%></td>
+							<td><%=link_to pharm.name, pharmacy_path(pharm) %></td>
+							<td><%=pharm.surname%></td>
+							<td class="success"><%=pharm.date.strftime('%v')%></td>
+							<td><%=pharm.location%></td>
+							<td><%= pharm.address%></td>
+							<td><%=pharm.description%></td>
+						</tr>
+					   <%end%>
+				  <%end%>
+				</tbody>
+			 </table>
+			</div>
+			<!--end of panel -->
+		</div>
+		<!-- end of col -->
+	</div>
+	<!--end of row -->					
 
-	<% @pharmacies.each do |pharm| %>
-		<%if Date.today == pharm.date%>
-	<tr>
-		<td><%=link_to pharm.name, pharmacy_path(pharm) %></td>
-		<td><%=pharm.surname%></td>
-		<td><%=pharm.am%></td>
-		<td><%=pharm.date.strftime('%v')%></td>
-		<td><%= pharm.address%></td>
-		<td><%=pharm.description%></td>
-		<td><%=pharm.location%></td>
-		<td><%=pharm.city_id%></td>
-		<td><%=pharm.latitude%></td>
-		<td><%=pharm.longitude%></td>
-	</tr>
-		<%end%>
-	<%end%>
-
-
-</table>
-
-<h1>import csv</h1>
+	<h4>import csv</h4>
 
 	<%= form_tag import_pharmacies_path, multipart: true do %>
 		<%=file_field_tag :file %>
@@ -47,4 +51,5 @@
 
 	<%end%>
 
-</table>
+</div>
+<!-- end of container-->

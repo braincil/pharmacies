@@ -1,5 +1,28 @@
 <div class="container" >
-	<% City.all.each do |city| %>
-		<%=link_to city.name, pharmacies_path(city: city.name)%>
-	<%end%>
+	<div class="row">
+		<div class="btn-group btn-group-justified">
+		<% City.all.each do |city| %>
+			<div class="btn-group">
+				<%=link_to city.name, pharmacies_path(city: city.name), class: "btn btn-nav but" %>
+				
+			</div>
+		<%end%>
+		</div>
+	</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		
+			
+		
