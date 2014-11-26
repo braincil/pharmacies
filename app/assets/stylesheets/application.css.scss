@@ -22,9 +22,7 @@
   background:    -moz-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%); /* FF3.6+ */
   background:     -ms-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%); /* IE10 */
   background:      -o-linear-gradient(90deg, #1D976C 10%, #93F9B9 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #1D976C 10%, #93F9B9 90%); /* W3C */
-        
-        
+  background:         linear-gradient(90deg, #1D976C 10%, #93F9B9 90%); /* W3C */    
  	}
 
 	.btn-nav {
@@ -34,6 +32,28 @@
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
 	}
+
+	/****navigation-Logo*****/
+
+	.navbar{
+		background-color: transparent;
+		background: transparent;
+		border: transparent;
+	}
+
+	.navbar-header {
+		float: left;
+		padding: 15px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.navbar-brand {
+		float: none;
+	}
+
+
+	/*********Button naigation************/
 	.btn-nav:hover {
 	    color: #e92d00;
 	    cursor: pointer;

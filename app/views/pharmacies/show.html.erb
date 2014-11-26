@@ -1,17 +1,38 @@
-<h1>Show PAge</h1>
+<div class="container">
 
-	<tr>
-		<td><%=@pharmacies.name%></td>
-		<td><%=@pharmacies.surname%></td>
-		<td><%=@pharmacies.am%></td>
-		<td><%=@pharmacies.date.strftime('%v')%></td>
-		<td><%=@pharmacies.description%></td>
-		<td><%=@pharmacies.location%></td>
-		<td><%=@pharmacies.city_id%></td>
-		<td><%=@pharmacies.latitude%></td>
-		<td><%=@pharmacies.longitude%></td>
-	</tr>
-
-
-	<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=800x400&maptype=roadmap&zoom=15
-&markers=color:red%7Clabel:C%7C#{@pharmacies.latitude},#{@pharmacies.longitude}" %>
+		<center>	
+		<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=800x400&maptype=roadmap&zoom=15&markers=color:red%7Clabel:C%7C#{@pharmacies.latitude},#{@pharmacies.longitude}" %>
+		</center>
+		
+	<div class="row">
+			<div class="panel panel-primary">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>AM</th>
+						<th>First name</th>
+						<th>Last Name</th>
+						<th>Date</th>
+						<th>Location</th>
+						<th>Address</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+		    		 	<tr>
+		    		 		<td><%=@pharmacies.am%></td>
+		    		 		<td><%=@pharmacies.name%></td>
+							<td><%=@pharmacies.surname%></td>
+							<td><%=@pharmacies.date.strftime('%v')%></td>
+							<td><%=@pharmacies.address%></td>
+							<td><%=@pharmacies.location%></td>
+							<td><%=@pharmacies.description%></td>
+						</tr>
+				</tbody>
+			 </table>
+			</div>
+			<!--end of panel -->
+	</div>
+	<!--end of row -->	
+</div>
+<!--end of container -->
